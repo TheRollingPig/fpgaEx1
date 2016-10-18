@@ -80,8 +80,11 @@ module uart_tx_op
 				data_in_lch <= data_in_i;
 				start_cnt <= `HIGH;
 			end
-			else
+			
+			if( state == SM_SEND_DATA0 )
+			begin
 				start_cnt <= `LOW;
+			end
 		end
 	end
 	
